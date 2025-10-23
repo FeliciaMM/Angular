@@ -1,4 +1,3 @@
-<!-- sidebar.component.html -->
 <nav class="sidebar">
   <!-- Titlul aplicației -->
   <div class="sidebar-header">
@@ -13,23 +12,28 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <i class="fa fa-home"></i> Welcome
+        Welcome
       </a>
     </li>
     <li>
-      <a routerLink="pages/conferences" routerLinkActive="active">
-        <i class="fa fa-calendar"></i> Conferences
-      </a>
+      <a routerLink="pages/conferences" routerLinkActive="active"> Conferences </a>
     </li>
     <li>
-      <a routerLink="pages/my-conferences" routerLinkActive="active">
-        <i class="fa fa-star"></i> My Conferences
-      </a>
+      <a routerLink="pages/my-conferences" routerLinkActive="active"> My Conferences </a>
     </li>
   </ul>
 
-  <!-- Footer-ul cu logout -->
+  <!-- Secțiune User + Settings -->
+  <div class="sidebar-user-section">
+    <button class="action-btn"><i class="fa fa-cog"></i> Settings</button>
+    <div class="user">
+      <img src="https://ui-avatars.com/api/?name=John+Doe" alt="User avatar" />
+      <span>John Doe</span>
+    </div>
+  </div>
+
+  <!-- Footer cu Logout -->
   <div class="sidebar-footer">
-    <button class="logout-btn"><i class="fa fa-sign-out-alt"></i> Logout</button>
+    <button class="logout-btn">Logout</button>
   </div>
 </nav>
