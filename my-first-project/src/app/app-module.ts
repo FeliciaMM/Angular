@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Sidebar } from './layout/sidebar/sidebar';
 import { ContentBar } from './layout/content-bar/content-bar';
+import { Welcome } from './pages/welcome/welcome';
 
 @NgModule({
   declarations: [
     App,
     Sidebar,
-    ContentBar
+    ContentBar,
+    Welcome
   ],
   imports: [
     BrowserModule,
