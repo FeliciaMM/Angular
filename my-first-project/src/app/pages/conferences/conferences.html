@@ -1,1 +1,14 @@
-<p>conferences works!</p>
+<h2>Upcoming Conferences</h2>
+
+<div *ngIf="isLoading">Loading conferences...</div>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+<ul *ngIf="!isLoading && !errorMessage">
+  <li *ngFor="let conf of conferences" class="conference-card">
+    <strong>{{ conf.title }}</strong
+    ><br />
+    🗓️ {{ conf.startDate }} – {{ conf.endDate }}<br />
+    🎤 {{ conf.speaker }}<br />
+    📍 {{ conf.location }}
+  </li>
+</ul>
