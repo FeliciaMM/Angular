@@ -1,0 +1,53 @@
+.content-bar {
+  height: 60px;
+  background-color: #354f52;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin-left: 240px; /* pentru a nu fi sub sidebar */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 240px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.content-bar .left h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.content-bar .right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.action-btn {
+  background: #52796f;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.action-btn:hover {
+  background: #6b9080;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+}

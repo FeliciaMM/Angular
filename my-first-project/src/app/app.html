@@ -1,16 +1,8 @@
-<!-- 🧭 Sidebar + Content Layout -->
-<div class="layout">
-  <!-- Sidebar în stânga -->
-  <app-sidebar></app-sidebar>
+<!-- app.component.html -->
+<app-sidebar></app-sidebar>
+<app-content-bar></app-content-bar>
 
-  <!-- Zona principală -->
-  <div class="main-content">
-    <!-- Content bar sus -->
-    <app-content-bar></app-content-bar>
-
-    <!-- Zona unde se afișează paginile -->
-    <div class="page-container">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<!-- container pentru conținutul paginilor -->
+<div class="page-content">
+  <router-outlet></router-outlet>
 </div>

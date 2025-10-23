@@ -1,1 +1,28 @@
-<p>sidebar works!</p>
+<!-- sidebar.component.html -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <h2>MyApp</h2>
+  </div>
+
+  <ul class="sidebar-menu">
+    <li>
+      <a
+        routerLink="/welcome"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        🏠 Welcome
+      </a>
+    </li>
+    <li>
+      <a routerLink="/conferences" routerLinkActive="active"> 📅 Conferences </a>
+    </li>
+    <li>
+      <a routerLink="/my-conferences" routerLinkActive="active"> 👤 My Conferences </a>
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">
+    <button class="logout-btn">🚪 Logout</button>
+  </div>
+</nav>
