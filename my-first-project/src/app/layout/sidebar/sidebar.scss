@@ -2,15 +2,15 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background: linear-gradient(180deg, #ff0000, #ff7a00, #ffd60a);
-  color: white;
+  background: linear-gradient(180deg, #1e1e2f, #2a2a40, #32324a);
+  color: #e0e0e0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
   left: 0;
   top: 0;
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -18,14 +18,15 @@
 .sidebar-header {
   padding: 25px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.15);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .app-title {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #fff, #ffe88f);
+  background: linear-gradient(90deg, #ffffff, #a8a8ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
@@ -41,7 +42,7 @@
 }
 
 .sidebar-menu li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-menu a {
@@ -50,18 +51,18 @@
   gap: 10px;
   padding: 15px 20px;
   text-decoration: none;
-  color: white;
+  color: #e0e0e0;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .sidebar-menu a:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   padding-left: 25px;
 }
 
 .sidebar-menu a.active {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   font-weight: 600;
 }
 
@@ -70,18 +71,79 @@
   font-size: 1.2rem;
 }
 
+/* Secțiunea User + Settings */
+.sidebar-user-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Butonul Settings */
+.sidebar-user-section .action-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  padding: 8px 14px;
+  color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar-user-section .action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.sidebar-user-section .action-btn i {
+  font-size: 1.1rem;
+}
+
+/* Informații user */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #e0e0e0;
+}
+
+.user img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  object-fit: cover;
+}
+
+.user span {
+  font-weight: 600;
+}
+
 /* Footer + Logout */
 .sidebar-footer {
   padding: 20px;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .logout-btn {
   width: 100%;
   padding: 12px;
-  background: #ffffff;
-  color: #ff0000;
+  background: #44445c;
+  color: #e0e0e0;
   border: none;
   cursor: pointer;
   border-radius: 6px;
@@ -95,8 +157,8 @@
 }
 
 .logout-btn:hover {
-  background: #ffd60a;
-  color: #000;
+  background: #6262ff;
+  color: #ffffff;
   transform: scale(1.05);
 }
 
