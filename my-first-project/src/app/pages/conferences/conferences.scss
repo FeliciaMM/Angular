@@ -1,24 +1,5 @@
-// h2 {
-//   color: #3f51b5;
-//   margin-bottom: 1rem;
-// }
-
-// ul {
-//   list-style-type: none;
-//   padding: 0;
-// }
-
-// .conference-card {
-//   background: #f9f9f9;
-//   margin: 0.75rem 0;
-//   padding: 1rem;
-//   border-radius: 10px;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-// }
-
-
-
 .conferences-container {
+  margin-left: 250px; // Ajustează după lățimea sidebar-ului tău (240px, 250px, etc.)
   padding: 100px 40px 40px 40px;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -42,6 +23,111 @@
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.2rem;
     margin: 0;
+  }
+}
+
+// Filters Section
+.filters-section {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.8s ease;
+
+  .filters-title {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+  }
+
+  .filters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: end;
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      label {
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .filter-icon {
+          font-size: 1.2rem;
+        }
+      }
+
+      .filter-input {
+        padding: 12px 15px;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+
+        &:focus {
+          outline: none;
+          border-color: #667eea;
+          background: white;
+          box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        &::placeholder {
+          color: #adb5bd;
+        }
+      }
+    }
+
+    .filter-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .clear-filters-btn {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      .results-count {
+        text-align: center;
+        color: #6c757d;
+        font-size: 0.9rem;
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 8px;
+
+        strong {
+          color: #667eea;
+          font-size: 1.1rem;
+        }
+      }
+    }
   }
 }
 
@@ -268,6 +354,24 @@
   p {
     font-size: 1.2rem;
     opacity: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .clear-filters-btn {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    }
   }
 }
 
@@ -321,8 +425,23 @@
 }
 
 // Responsive Design
+@media (max-width: 1024px) {
+  .conferences-container {
+    margin-left: 200px;
+  }
+  
+  .filters-section .filters-container {
+    grid-template-columns: repeat(2, 1fr);
+    
+    .filter-actions {
+      grid-column: span 2;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .conferences-container {
+    margin-left: 0;
     padding: 80px 20px 20px 20px;
   }
 
@@ -332,6 +451,18 @@
 
   .header .subtitle {
     font-size: 1rem;
+  }
+
+  .filters-section {
+    padding: 20px;
+
+    .filters-container {
+      grid-template-columns: 1fr;
+
+      .filter-actions {
+        grid-column: 1;
+      }
+    }
   }
 
   .conferences-grid {
@@ -349,8 +480,20 @@
 }
 
 @media (max-width: 480px) {
+  .conferences-container {
+    padding: 70px 15px 15px 15px;
+  }
+
   .header h1 {
     font-size: 1.5rem;
+  }
+
+  .filters-section {
+    padding: 15px;
+
+    .filters-title {
+      font-size: 1.2rem;
+    }
   }
 
   .conference-card {
@@ -368,6 +511,22 @@
       .info-content .value {
         font-size: 0.9rem;
       }
+    }
+  }
+
+  .empty-state {
+    padding: 60px 15px;
+
+    .empty-icon {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
     }
   }
 }

@@ -1,22 +1,63 @@
-<!-- <h2>Upcoming Conferences</h2>
-
-<div *ngIf="isLoading">Loading conferences...</div>
-<div *ngIf="errorMessage">{{ errorMessage }}</div>
-
-<ul *ngIf="!isLoading && !errorMessage">
-  <li *ngFor="let conf of conferences" class="conference-card">
-    <strong>{{ conf.title }}</strong
-    ><br />
-    🗓️ {{ conf.startDate }} – {{ conf.endDate }}<br />
-    🎤 {{ conf.speaker }}<br />
-    📍 {{ conf.location }}
-  </li>
-</ul> -->
-
 <div class="conferences-container">
   <div class="header">
     <h1>🎯 Upcoming Conferences</h1>
     <p class="subtitle">Discover amazing tech events around the world</p>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="filters-section" *ngIf="!isLoading && !errorMessage">
+    <h2 class="filters-title">🔍 Filter Conferences</h2>
+    
+    <div class="filters-container">
+      <div class="filter-group">
+        <label for="startDate">
+          <span class="filter-icon">📅</span>
+          Start Date
+        </label>
+        <input 
+          type="date" 
+          id="startDate"
+          [(ngModel)]="filterStartDate" 
+          (change)="applyFilters()"
+          class="filter-input">
+      </div>
+
+      <div class="filter-group">
+        <label for="endDate">
+          <span class="filter-icon">📅</span>
+          End Date
+        </label>
+        <input 
+          type="date" 
+          id="endDate"
+          [(ngModel)]="filterEndDate" 
+          (change)="applyFilters()"
+          class="filter-input">
+      </div>
+
+      <div class="filter-group">
+        <label for="speaker">
+          <span class="filter-icon">🎤</span>
+          Speaker
+        </label>
+        <input 
+          type="text" 
+          id="speaker"
+          [(ngModel)]="filterSpeaker" 
+          (input)="applyFilters()"
+          placeholder="Search by speaker name..."
+          class="filter-input">
+      </div>
+
+      <div class="filter-actions">
+        <button class="clear-filters-btn" (click)="clearFilters()">
+          ✖️ Clear Filters
+        </button>
+        <div class="results-count">
+          Found: <strong>{{ filteredConferences.length }}</strong> conference(s)
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Loading State -->
@@ -29,12 +70,12 @@
   <div *ngIf="errorMessage" class="error-container">
     <div class="error-icon">⚠️</div>
     <p>{{ errorMessage }}</p>
-    <button class="retry-btn" (click)="ngOnInit()">Try Again</button>
+    <button class="retry-btn" (click)="loadConferences()">Try Again</button>
   </div>
 
   <!-- Conferences Grid -->
-  <div *ngIf="!isLoading && !errorMessage && conferences.length > 0" class="conferences-grid">
-    <div *ngFor="let conf of conferences" class="conference-card">
+  <div *ngIf="!isLoading && !errorMessage && filteredConferences.length > 0" class="conferences-grid">
+    <div *ngFor="let conf of filteredConferences" class="conference-card">
       <div class="card-ribbon">Tech Event</div>
       
       <div class="card-header">
@@ -74,10 +115,14 @@
     </div>
   </div>
 
-  <!-- Empty State -->
-  <div *ngIf="!isLoading && !errorMessage && conferences.length === 0" class="empty-state">
+  <!-- Empty State / No Results -->
+  <div *ngIf="!isLoading && !errorMessage && filteredConferences.length === 0" class="empty-state">
     <div class="empty-icon">📭</div>
-    <h3>No Conferences Available</h3>
-    <p>Check back later for upcoming events!</p>
+    <h3>No Conferences Found</h3>
+    <p *ngIf="conferences.length > 0">Try adjusting your filters</p>
+    <p *ngIf="conferences.length === 0">Check back later for upcoming events!</p>
+    <button *ngIf="conferences.length > 0" class="clear-filters-btn" (click)="clearFilters()">
+      Clear Filters
+    </button>
   </div>
 </div>
