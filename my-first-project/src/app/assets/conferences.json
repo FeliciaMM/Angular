@@ -1,0 +1,44 @@
+{
+  "conferences": [
+    {
+      "id": 1,
+      "title": "Angular Summit 2025",
+      "startDate": "2025-11-15",
+      "endDate": "2025-11-17",
+      "speaker": "John Doe",
+      "location": "San Francisco, USA"
+    },
+    {
+      "id": 2,
+      "title": "Web Dev Conference",
+      "startDate": "2025-12-01",
+      "endDate": "2025-12-03",
+      "speaker": "Jane Smith",
+      "location": "London, UK"
+    },
+    {
+      "id": 3,
+      "title": "Frontend Masters",
+      "startDate": "2025-10-20",
+      "endDate": "2025-10-22",
+      "speaker": "Mike Johnson",
+      "location": "Berlin, Germany"
+    },
+    {
+      "id": 4,
+      "title": "JavaScript World",
+      "startDate": "2025-11-05",
+      "endDate": "2025-11-07",
+      "speaker": "Sarah Williams",
+      "location": "Paris, France"
+    },
+    {
+      "id": 5,
+      "title": "Tech Innovation Summit",
+      "startDate": "2025-12-10",
+      "endDate": "2025-12-12",
+      "speaker": "David Brown",
+      "location": "Tokyo, Japan"
+    }
+  ]
+}
