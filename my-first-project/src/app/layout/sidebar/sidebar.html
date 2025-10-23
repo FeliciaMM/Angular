@@ -1,28 +1,35 @@
 <!-- sidebar.component.html -->
 <nav class="sidebar">
+  <!-- Titlul aplicației -->
   <div class="sidebar-header">
-    <h2>MyApp</h2>
+    <h2 class="app-title">TotalSoft</h2>
   </div>
 
+  <!-- Meniul principal -->
   <ul class="sidebar-menu">
     <li>
       <a
-        routerLink="/welcome"
+        routerLink="pages/welcome"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        🏠 Welcome
+        <i class="fa fa-home"></i> Welcome
       </a>
     </li>
     <li>
-      <a routerLink="/conferences" routerLinkActive="active"> 📅 Conferences </a>
+      <a routerLink="pages/conferences" routerLinkActive="active">
+        <i class="fa fa-calendar"></i> Conferences
+      </a>
     </li>
     <li>
-      <a routerLink="/my-conferences" routerLinkActive="active"> 👤 My Conferences </a>
+      <a routerLink="pages/my-conferences" routerLinkActive="active">
+        <i class="fa fa-star"></i> My Conferences
+      </a>
     </li>
   </ul>
 
+  <!-- Footer-ul cu logout -->
   <div class="sidebar-footer">
-    <button class="logout-btn">🚪 Logout</button>
+    <button class="logout-btn"><i class="fa fa-sign-out-alt"></i> Logout</button>
   </div>
 </nav>
