@@ -6,13 +6,17 @@ import { App } from './app';
 import { Sidebar } from './layout/sidebar/sidebar';
 import { ContentBar } from './layout/content-bar/content-bar';
 import { Welcome } from './pages/welcome/welcome';
+import { Conferences } from './pages/conferences/conferences';
+import { MyConferences } from './pages/my-conferences/my-conferences';
 
 @NgModule({
   declarations: [
     App,
     Sidebar,
     ContentBar,
-    Welcome
+    Welcome,
+    Conferences,
+    MyConferences
   ],
   imports: [
     BrowserModule,
